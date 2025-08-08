@@ -50,7 +50,7 @@ exports.uploadBilledTransaction = async function () {
       req.end();
     });
 
-    return response; // string, parse if needed
+    return response; 
   } catch (error) {
     console.error("Upload Error:", error.message);
     return null;
