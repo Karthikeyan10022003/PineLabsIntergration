@@ -1,10 +1,6 @@
 const force_cancel=require('./forceCancellation');
-const main = async function () {
-    try {
-        const cancelResponse = await force_cancel.cancelTransaction();
-        console.log("Cancellation Response:", cancelResponse);
-    } catch (error) {
-        console.error("Error in main function:", error.message);
-    }
-}
-main();
+force_cancel.cancelTransaction().then((response) => {
+    console.log("Force Cancellation Response:", response);  
+}).catch((error) => {
+    console.error("Error during Force Cancellation:", error);
+});
